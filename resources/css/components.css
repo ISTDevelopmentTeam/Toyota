@@ -1,0 +1,160 @@
+/* Component Styles */
+
+/* CTA Button */
+.cta-button {
+    background: 
+        linear-gradient(135deg, var(--primary-pink), var(--primary-orange), var(--primary-gold), var(--primary-blue), var(--primary-purple)),
+        radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 500% 500%, 100% 100%;
+    animation: ultimateGradientShift 6s ease infinite;
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transition: left 0.8s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-8px) scale(1.08);
+    box-shadow: 
+        0 30px 60px rgba(220, 38, 127, 0.6),
+        0 15px 30px rgba(255, 215, 0, 0.4);
+    border-color: rgba(255, 215, 0, 0.8);
+}
+
+/* Social Icons */
+.social-icon {
+    transition: var(--transition-fast);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.2);
+    filter: drop-shadow(0 5px 15px rgba(255, 255, 255, 0.3));
+}
+
+/* DPO Badge */
+.dpo-badge {
+    opacity: 0.6;
+    transition: var(--transition-fast);
+}
+
+.dpo-badge:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Logo Hover Effects */
+.logo-hover {
+    transition: var(--transition-slow);
+}
+
+.logo-hover:hover {
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.3));
+}
+
+/* Partnership Showcase */
+.partnership-showcase {
+    background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+        url('images/palm.gif') center/cover;
+    transition: var(--transition-slow);
+    cursor: pointer;
+}
+
+.partnership-showcase:hover {
+    transform: 
+        perspective(1000px) 
+        rotateX(5deg) 
+        rotateY(-5deg) 
+        translateY(-20px) 
+        scale(1.02);
+    box-shadow: 
+        0 40px 100px rgba(255, 215, 0, 0.3),
+        0 20px 50px rgba(220, 38, 127, 0.4);
+}
+
+.partnership-showcase::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('images/palm.gif') center/120% no-repeat;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.partnership-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-gold));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+    box-shadow: 0 8px 25px rgba(220, 38, 127, 0.3);
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 15px 40px rgba(220, 38, 127, 0.5);
+    background: linear-gradient(135deg, var(--primary-gold), var(--primary-pink));
+}
+
+.back-to-top-btn::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, var(--primary-pink), var(--primary-gold), var(--primary-blue), var(--primary-purple));
+    background-size: 400% 400%;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    animation: borderGlow 4s ease infinite;
+}
+
+.back-to-top-btn:hover::before {
+    opacity: 1;
+}

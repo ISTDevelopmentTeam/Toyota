@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Temporarily disabled
+@import './variables.css';
+@import './base.css';
+@import './components.css';
+@import './layout.css';
+@import './animations.css';
+@import './responsive.css';
+*/

@@ -1,0 +1,50 @@
+/* CSS Custom Properties and Variables */
+:root {
+    /* Color Palette */
+    --primary-pink: #dc267f;
+    --primary-gold: #ffd700;
+    --primary-blue: #00bfff;
+    --primary-purple: #8a2be2;
+    --primary-orange: #ff4500;
+    
+    /* Background Colors */
+    --bg-dark: rgba(10, 10, 10, 0.75);
+    --bg-secondary: rgba(26, 26, 46, 0.75);
+    --bg-tertiary: rgba(22, 33, 62, 0.75);
+    
+    /* Glass Effect */
+    --glass-bg-primary: rgba(255, 255, 255, 0.1);
+    --glass-bg-secondary: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #e5e7eb;
+    --text-muted: #9ca3af;
+    --text-accent: #ffd700;
+    
+    /* Shadows */
+    --shadow-primary: 0 20px 50px rgba(220, 38, 127, 0.2);
+    --shadow-gold: 0 0 30px rgba(255, 215, 0, 0.5);
+    --shadow-deep: 0 30px 80px rgba(220, 38, 127, 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-fast: all 0.3s ease;
+    --transition-slow: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+    
+    /* Border Radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+}
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');

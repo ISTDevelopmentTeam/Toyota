@@ -1,0 +1,274 @@
+/* Responsive Styles and Mobile Layout */
+
+/* Mobile Menu Styles */
+.mobile-menu-toggle {
+    display: none;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu-toggle:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(220, 38, 127, 0.2));
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(26, 26, 46, 0.95));
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.mobile-nav-link {
+    display: block;
+    color: #e5e7eb;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-nav-link:hover {
+    color: #ffd700;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(220, 38, 127, 0.05));
+    padding-left: 2rem;
+}
+
+.mobile-cta {
+    margin: 1rem 1.5rem;
+    text-align: center;
+}
+
+/* Floating Benefits Panel */
+.floating-benefits-panel {
+    position: fixed;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 80vh;
+    z-index: 1000;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+}
+
+.floating-benefits-panel.open {
+    right: 20px;
+    opacity: 1;
+}
+
+.benefits-toggle {
+    position: fixed;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 120px;
+    background: linear-gradient(135deg, #dc267f, #ffd700);
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: -10px 0 30px rgba(220, 38, 127, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.benefits-toggle:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: -15px 0 40px rgba(220, 38, 127, 0.5);
+}
+
+/* Partnership Benefits Grid */
+.partnership-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.benefit-highlight {
+    background: 
+        linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)),
+        radial-gradient(circle at 30% 30%, rgba(220, 38, 127, 0.15), transparent),
+        radial-gradient(circle at 70% 70%, rgba(0, 191, 255, 0.15), transparent);
+    backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 40px 25px;
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.benefit-highlight::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #dc267f, #ffd700, #00bfff, #8a2be2, #dc267f);
+    background-size: 500% 500%;
+    border-radius: 30px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+    animation: borderGlow 4s ease infinite;
+}
+
+.benefit-highlight:hover::before {
+    opacity: 1;
+}
+
+.benefit-highlight:hover {
+    transform: translateY(-25px) scale(1.15) rotateY(8deg) rotateX(5deg);
+    box-shadow: 
+        0 40px 80px rgba(255, 215, 0, 0.5),
+        0 20px 40px rgba(220, 38, 127, 0.3);
+}
+
+.benefit-icon-container {
+    position: relative;
+    margin: 0 auto 25px;
+    width: 80px;
+    height: 80px;
+}
+
+.benefit-icon-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: conic-gradient(from 0deg, rgba(255, 215, 0, 0.4), rgba(220, 38, 127, 0.4), rgba(0, 191, 255, 0.4), rgba(255, 215, 0, 0.4));
+    border-radius: 50%;
+    animation: iconAura 6s linear infinite;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-highlight:hover .benefit-icon-container::before {
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-benefits-panel {
+        width: calc(100vw - 40px);
+        right: -100vw;
+        height: 70vh;
+    }
+
+    .floating-benefits-panel.open {
+        right: 20px;
+    }
+
+    .benefits-toggle {
+        left: -50px;
+        width: 50px;
+        height: 100px;
+        font-size: 12px;
+    }
+    
+    .partnership-showcase {
+        padding: 20px;
+    }
+
+    .partnership-showcase {
+        background: 
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)),
+            url('images/palm.gif') center/cover;
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+    }
+
+    .partnership-showcase:hover {
+        transform: translateY(-15px) scale(1.05);
+        box-shadow: 
+            0 30px 80px rgba(220, 38, 127, 0.4),
+            0 15px 40px rgba(255, 215, 0, 0.3);
+        border: 2px solid rgba(255, 215, 0, 0.6);
+    }
+
+    .benefits-carousel-container {
+        max-width: 100%;
+        height: 350px;
+    }
+
+    .diamond-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .diamond-frame {
+        border-width: 4px;
+    }
+
+    #coin-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-gradient {
+        background-attachment: scroll;
+    }
+
+    .central-logo-section {
+        padding: 40px 0;
+        min-height: 400px;
+    }
+
+    .partnership-benefit-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .benefit-highlight {
+        padding: 30px 20px;
+    }
+
+    .benefit-highlight:hover {
+        transform: translateY(-15px) scale(1.05);
+    }
+}

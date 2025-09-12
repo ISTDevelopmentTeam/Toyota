@@ -1,0 +1,79 @@
+/* Base Styles, Typography, and Reset */
+
+* {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Hero Background */
+.hero-gradient {
+    background: 
+        linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 25%, var(--bg-tertiary) 50%, rgba(15, 52, 96, 0.75) 75%, rgba(0, 0, 0, 0.75) 100%),
+        url('images/test.gif') center/cover fixed;
+    position: relative;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+.hero-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(220, 38, 127, 0.4) 0%, transparent 60%),
+        radial-gradient(circle at 80% 20%, rgba(192, 192, 192, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 40% 70%, rgba(255, 215, 0, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 60% 40%, rgba(0, 191, 255, 0.15) 0%, transparent 50%);
+    animation: ambientGlow 18s ease-in-out infinite alternate;
+}
+
+/* Floating Particles */
+.floating-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: particleFloat 15s ease-in-out infinite;
+}
+
+/* Text Utilities */
+.text-glow {
+    text-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.8), 
+        0 0 60px rgba(255, 215, 0, 0.6),
+        0 0 90px rgba(220, 38, 127, 0.4);
+}
+
+/* Premium Card Base */
+.premium-card {
+    background: linear-gradient(135deg, var(--glass-bg-primary), var(--glass-bg-secondary));
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-fast);
+}
+
+.premium-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-primary);
+    border-color: rgba(0, 191, 255, 0.4);
+}
+
+/* Form Specific Premium Card */
+#forms .premium-card {
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url('images/slow.gif') center/cover;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-fast);
+}
+
+/* Section Fade In Animation */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+    animation-play-state: paused;
+}
